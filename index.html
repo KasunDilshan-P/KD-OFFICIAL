@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kasun Dilshan | Official Portfolio</title>
+    <meta name="description" content="Kasun Dilshan - Official personal portfolio website. Connect with Kasun on social media, view projects, and get in touch.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-inner">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span class="loader-text">KD</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <a href="#home" class="brand-logo">
+                <span class="brand-k">K</span><span class="brand-d">D</span>
+            </a>
+        </div>
+        <div class="nav-links" id="nav-links">
+            <a href="#home" class="nav-link active" data-section="home">Home</a>
+            <a href="#about" class="nav-link" data-section="about">About</a>
+            <a href="#social" class="nav-link" data-section="social">Social</a>
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+        </div>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-greeting animate-slide-up">
+                    <span class="greeting-line"></span>
+                    <span class="greeting-text">Welcome to my world</span>
+                </div>
+                <h1 class="hero-title animate-slide-up delay-1">
+                    <span class="title-line">I'm <span class="highlight">Kasun</span></span>
+                    <span class="title-line"><span class="highlight">Dilshan</span></span>
+                </h1>
+                <p class="hero-subtitle animate-slide-up delay-2">
+                    <span class="typed-text" id="typed-text"></span>
+                    <span class="typed-cursor">|</span>
+                </p>
+                <div class="hero-cta animate-slide-up delay-3">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>Get In Touch</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#about" class="btn btn-outline">
+                        <span>Know More</span>
+                    </a>
+                </div>
+                <div class="hero-social animate-slide-up delay-4">
+                    <a href="https://www.facebook.com/kasun.dilshan.1297" target="_blank" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/Kasun%20Dilshan%20Official" target="_blank" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@kasundilshanofficial2631" target="_blank" class="social-icon" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@kasundilshanofficial1" target="_blank" class="social-icon" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://open.spotify.com/user/KD%20Official" target="_blank" class="social-icon" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+            <div class="hero-image animate-scale-in delay-2">
+                <div class="image-wrapper">
+                    <div class="image-glow"></div>
+                    <div class="image-border"></div>
+                    <img src="profile.png" alt="Kasun Dilshan - Professional Portrait" class="profile-img" id="profile-img">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="floating-badge badge-1">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTuber</span>
+                </div>
+                <div class="floating-badge badge-2">
+                    <i class="fab fa-tiktok"></i>
+                    <span>Creator</span>
+                </div>
+                <div class="floating-badge badge-3">
+                    <i class="fab fa-spotify"></i>
+                    <span>Artist</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-fade-in delay-5">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="section-header">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">Know Who <span class="highlight">I Am</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="about-content">
+            <div class="about-image-col reveal-left">
+                <div class="about-image-wrapper">
+                    <img src="profile.png" alt="Kasun Dilshan" class="about-img">
+                    <div class="about-img-decoration"></div>
+                    <div class="experience-badge">
+                        <span class="exp-number">KD</span>
+                        <span class="exp-text">Official</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-text-col reveal-right">
+                <h3 class="about-heading">I'm Kasun Dilshan, a <span class="highlight">Creative Professional</span></h3>
+                <p class="about-description">
+                    I'm a passionate content creator and digital artist from Sri Lanka. I love connecting with people through various social media platforms, creating engaging content, and inspiring others through my creative journey.
+                </p>
+                <p class="about-description">
+                    My mission is to share unique and meaningful content that resonates with people across the globe. Whether it's through YouTube videos, TikTok creations, or Spotify tracks, I strive to make every piece of content memorable.
+                </p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fab fa-youtube"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">YouTube</span>
+                            <span class="stat-value">Content Creator</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fab fa-tiktok"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">TikTok</span>
+                            <span class="stat-value">Digital Creator</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fab fa-spotify"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-label">Spotify</span>
+                            <span class="stat-value">Music Artist</span>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary about-btn">
+                    <span>Let's Connect</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="social" id="social">
+        <div class="section-header">
+            <span class="section-tag">My Platforms</span>
+            <h2 class="section-title">Connect on <span class="highlight">Social Media</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="social-grid">
+            <a href="https://www.facebook.com/kasun.dilshan.1297" target="_blank" class="social-card reveal-up" id="social-facebook">
+                <div class="card-bg" style="--card-color: #1877F2;"></div>
+                <div class="card-icon"><i class="fab fa-facebook-f"></i></div>
+                <h3 class="card-title">Facebook</h3>
+                <p class="card-desc">Follow my journey and stay updated with my latest posts and updates.</p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="https://www.instagram.com/Kasun%20Dilshan%20Official" target="_blank" class="social-card reveal-up" id="social-instagram" style="--delay: 0.1s;">
+                <div class="card-bg" style="--card-color: #E4405F;"></div>
+                <div class="card-icon"><i class="fab fa-instagram"></i></div>
+                <h3 class="card-title">Instagram</h3>
+                <p class="card-desc">Explore my visual stories, reels, and behind-the-scenes moments.</p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="https://www.youtube.com/@kasundilshanofficial2631" target="_blank" class="social-card reveal-up" id="social-youtube" style="--delay: 0.2s;">
+                <div class="card-bg" style="--card-color: #FF0000;"></div>
+                <div class="card-icon"><i class="fab fa-youtube"></i></div>
+                <h3 class="card-title">YouTube</h3>
+                <p class="card-desc">Watch my videos, vlogs, and subscribe for regular content updates.</p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="https://www.tiktok.com/@kasundilshanofficial1" target="_blank" class="social-card reveal-up" id="social-tiktok" style="--delay: 0.3s;">
+                <div class="card-bg" style="--card-color: #00f2ea;"></div>
+                <div class="card-icon"><i class="fab fa-tiktok"></i></div>
+                <h3 class="card-title">TikTok</h3>
+                <p class="card-desc">Catch my trending short videos and creative TikTok content.</p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="https://x.com/kasundilshan" target="_blank" class="social-card reveal-up" id="social-x" style="--delay: 0.4s;">
+                <div class="card-bg" style="--card-color: #1DA1F2;"></div>
+                <div class="card-icon"><i class="fab fa-x-twitter"></i></div>
+                <h3 class="card-title">X (Twitter)</h3>
+                <p class="card-desc">Follow my thoughts, updates, and join the conversation.</p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+            <a href="https://open.spotify.com/user/KD%20Official" target="_blank" class="social-card reveal-up" id="social-spotify" style="--delay: 0.5s;">
+                <div class="card-bg" style="--card-color: #1DB954;"></div>
+                <div class="card-icon"><i class="fab fa-spotify"></i></div>
+                <h3 class="card-title">Spotify</h3>
+                <p class="card-desc">Listen to my music, playlists, and discover new tracks.</p>
+                <div class="card-arrow"><i class="fas fa-arrow-right"></i></div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="section-header">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Let's <span class="highlight">Connect</span></h2>
+            <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+            <div class="contact-info reveal-left">
+                <h3 class="contact-heading">Let's work together!</h3>
+                <p class="contact-description">
+                    Feel free to reach out to me for collaborations, business inquiries, or just to say hello. I'm always open to new opportunities and connections.
+                </p>
+                <div class="contact-cards">
+                    <div class="contact-card" id="contact-phone">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Phone</span>
+                            <a href="tel:+94702911169" class="contact-card-value">070 291 1169</a>
+                        </div>
+                    </div>
+                    <div class="contact-card" id="contact-email">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Email</span>
+                            <a href="mailto:Kharshana20@gmail.com" class="contact-card-value">Kharshana20@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contact-card" id="contact-location">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-info">
+                            <span class="contact-card-label">Location</span>
+                            <span class="contact-card-value">Sri Lanka</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper reveal-right">
+                <form class="contact-form" id="contact-form">
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="name" name="name" required placeholder=" ">
+                            <label for="name">Your Name</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" required placeholder=" ">
+                            <label for="email">Your Email</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="text" id="subject" name="subject" required placeholder=" ">
+                            <label for="subject">Subject</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <div class="form-group full-width">
+                        <div class="input-wrapper">
+                            <textarea id="message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="message">Your Message</label>
+                            <div class="input-line"></div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary submit-btn" id="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="brand-logo"><span class="brand-k">K</span><span class="brand-d">D</span></span>
+                <p class="footer-text">Creating content, building connections, and inspiring creativity across the digital world.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#social">Social</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <h4>Follow Me</h4>
+                <div class="footer-social-icons">
+                    <a href="https://www.facebook.com/kasun.dilshan.1297" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/Kasun%20Dilshan%20Official" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.youtube.com/@kasundilshanofficial2631" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@kasundilshanofficial1" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://open.spotify.com/user/KD%20Official" target="_blank" aria-label="Spotify"><i class="fab fa-spotify"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Kasun Dilshan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
