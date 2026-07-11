@@ -342,7 +342,7 @@ document.querySelectorAll('.social-card').forEach(card => {
     });
 });
 
-// === Contact Form Handling ===
+// === Contact Form Handling (Real Email via FormSubmit.co) ===
 const contactForm = document.getElementById('contact-form');
 const submitBtn = document.getElementById('submit-btn');
 
@@ -350,26 +350,66 @@ if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        // Button animation
+        // Validate all required fields
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const subject = document.getElementById('subject').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !subject || !message) {
+            submitBtn.innerHTML = '<span>Please fill all fields!</span><i class="fas fa-exclamation-triangle"></i>';
+            submitBtn.style.background = 'linear-gradient(135deg, #ff4444, #ff6b6b)';
+            setTimeout(() => {
+                submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+                submitBtn.style.background = '';
+            }, 2000);
+            return;
+        }
+
+        // Button loading animation
         submitBtn.innerHTML = '<span>Sending...</span><i class="fas fa-spinner fa-spin"></i>';
         submitBtn.disabled = true;
 
-        // Simulate form submission
-        setTimeout(() => {
-            submitBtn.innerHTML = '<span>Message Sent!</span><i class="fas fa-check"></i>';
-            submitBtn.style.background = 'linear-gradient(135deg, #1DB954, #00d4ff)';
+        // Send form data via AJAX to FormSubmit.co
+        const formData = new FormData(contactForm);
 
-            // Create success ripple
-            createRipple(submitBtn);
+        fetch(contactForm.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Success!
+                submitBtn.innerHTML = '<span>Message Sent! ✓</span><i class="fas fa-check"></i>';
+                submitBtn.style.background = 'linear-gradient(135deg, #1DB954, #00d4ff)';
+                createRipple(submitBtn);
 
-            // Reset form
+                // Reset form after delay
+                setTimeout(() => {
+                    contactForm.reset();
+                    submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+                    submitBtn.style.background = '';
+                    submitBtn.disabled = false;
+                }, 3000);
+            } else {
+                throw new Error('Submission failed');
+            }
+        })
+        .catch(error => {
+            console.error('Form submission error:', error);
+            submitBtn.innerHTML = '<span>Failed! Try Again</span><i class="fas fa-times"></i>';
+            submitBtn.style.background = 'linear-gradient(135deg, #ff4444, #ff6b6b)';
+
             setTimeout(() => {
-                contactForm.reset();
                 submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
                 submitBtn.style.background = '';
                 submitBtn.disabled = false;
             }, 3000);
-        }, 1500);
+        });
     });
 }
 
